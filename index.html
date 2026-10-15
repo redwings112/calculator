@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Excellence & Engineering logistics Cost Calculator (₦)</title>
+    <title>NaijaHaulage Pro - Nigerian General Cargo & Logistics Cost Calculator (₦)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome icons -->
@@ -40,7 +40,7 @@
                         <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white">NaijaHaulage Pro</h1>
                         <span class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">Naira (₦)</span>
                     </div>
-                    <p class="text-xs text-slate-400">Nigerian Logistics, Fuel Consumption & Freight Rate Estimator</p>
+                    <p class="text-xs text-slate-400">Nigerian General Cargo, Weight & Freight Rate Estimator</p>
                 </div>
             </div>
             <div class="flex items-center gap-2.5 w-full sm:w-auto justify-end">
@@ -57,50 +57,50 @@
     <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
 
-        <!-- Nigerian Fleet Presets -->
+        <!-- Cargo & Fleet Presets -->
         <section class="mb-8">
             <div class="flex justify-between items-center mb-3">
                 <h2 class="text-xs uppercase tracking-wider text-slate-400 font-bold flex items-center gap-2">
-                    <i class="fa-solid fa-truck-ramp-box text-emerald-400"></i> Nigerian Fleet Presets
+                    <i class="fa-solid fa-boxes-stacked text-emerald-400"></i> Nigerian Cargo & Fleet Presets
                 </h2>
-                <span class="text-[11px] text-slate-500 hidden sm:inline">Select a truck type to prefill realistic fuel & load metrics</span>
+                <span class="text-[11px] text-slate-500 hidden sm:inline">Select cargo/truck profile to auto-adjust weight, fuel & wear factors</span>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <button onclick="applyPreset('pickup')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
+                <button onclick="applyPreset('lightCargo')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Pick-up / Van</span>
-                        <i class="fa-solid fa-van-shuttle text-slate-500 group-hover:text-emerald-400 text-sm"></i>
+                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Light / Palletized</span>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 px-2 py-0.5 rounded-full font-bold">10 Tons</span>
                     </div>
-                    <div class="text-base font-bold text-white">1 – 3 Tons</div>
-                    <div class="text-[11px] text-slate-500 mt-1">~14 Liters / 100km</div>
+                    <div class="text-base font-bold text-white">Inverters / Paper Rolls</div>
+                    <div class="text-[11px] text-slate-500 mt-1">Faster transit • 25 L/100km</div>
                 </button>
 
-                <button onclick="applyPreset('canter')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
+                <button onclick="applyPreset('mediumCargo')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Canter / Medium Rigid</span>
-                        <i class="fa-solid fa-truck text-slate-500 group-hover:text-emerald-400 text-sm"></i>
+                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Packaged Goods</span>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">25 Tons</span>
                     </div>
-                    <div class="text-base font-bold text-white">5 – 10 Tons</div>
-                    <div class="text-[11px] text-slate-500 mt-1">~28 Liters / 100km</div>
+                    <div class="text-base font-bold text-white">Drinks (PET) / Grains</div>
+                    <div class="text-[11px] text-slate-500 mt-1">Standard load • 38 L/100km</div>
                 </button>
 
-                <button onclick="applyPreset('rigid')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
+                <button onclick="applyPreset('heavyCargo')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Heavy Axle Rigid Truck</span>
-                        <i class="fa-solid fa-truck-field text-slate-500 group-hover:text-emerald-400 text-sm"></i>
+                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Heavy Industrial</span>
+                        <span class="text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full font-bold">45 Tons</span>
                     </div>
-                    <div class="text-base font-bold text-white">15 – 20 Tons</div>
-                    <div class="text-[11px] text-slate-500 mt-1">~38 Liters / 100km</div>
+                    <div class="text-base font-bold text-white">Iron Rods / Chemicals</div>
+                    <div class="text-[11px] text-slate-500 mt-1">Heavy strain • 52 L/100km</div>
                 </button>
 
-                <button onclick="applyPreset('trailer')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
+                <button onclick="applyPreset('megaCargo')" class="preset-card p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/60 text-left transition-all group shadow-sm">
                     <div class="flex justify-between items-center mb-1">
-                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Flatbed / Container Trailer</span>
-                        <i class="fa-solid fa-trailer text-slate-500 group-hover:text-emerald-400 text-sm"></i>
+                        <span class="text-xs font-semibold text-slate-400 group-hover:text-emerald-400">Multi-Axle Heavy</span>
+                        <span class="text-[10px] bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full font-bold">60 Tons</span>
                     </div>
-                    <div class="text-base font-bold text-white">30 – 45 Tons</div>
-                    <div class="text-[11px] text-slate-500 mt-1">~52 Liters / 100km</div>
+                    <div class="text-base font-bold text-white">Scraps / Woods / Jumbo</div>
+                    <div class="text-[11px] text-slate-500 mt-1">Slow transit • 68 L/100km</div>
                 </button>
             </div>
         </section>
@@ -112,7 +112,7 @@
             <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700/80 rounded-3xl p-6 shadow-xl space-y-6">
                 <div class="border-b border-slate-700/80 pb-4 flex justify-between items-center">
                     <h3 class="text-base font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-sliders text-emerald-400"></i> Trip & Expense Inputs
+                        <i class="fa-solid fa-sliders text-emerald-400"></i> Trip, Weight & Cargo Parameters
                     </h3>
                     <div class="flex items-center gap-2">
                         <span class="text-xs font-medium text-slate-400">Distance Unit:</span>
@@ -124,23 +124,24 @@
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <!-- Vehicle Tonnage -->
+                    <!-- Cargo Tonnage & Weight Impact -->
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Vehicle / Cargo Capacity</label>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Cargo Weight / Tonnage</label>
                         <div class="relative">
                             <input type="number" id="tonnage" value="30" min="0.5" step="0.5" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-14 transition-colors">
                             <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-medium">Tons</span>
                         </div>
+                        <p class="text-[11px] text-amber-400 font-medium mt-1" id="weightImpactBadge">⚖️ Weight Factor: Standard Load</p>
                     </div>
 
                     <!-- Distance -->
                     <div>
                         <label id="distanceLabel" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Distance to Cover</label>
                         <div class="relative">
-                            <input type="number" id="distance" value="620" min="1" step="1" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-14 transition-colors">
+                            <input type="number" id="distance" value="1000" min="1" step="1" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-14 transition-colors">
                             <span id="distanceUnitDisplay" class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-medium">km</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 mt-1">e.g., Lagos to Abuja (~750km), Lagos to Kano (~1,000km)</p>
+                        <p class="text-[11px] text-slate-500 mt-1">e.g., Lagos to Kano (~1,000km)</p>
                     </div>
 
                     <!-- Diesel Cost -->
@@ -155,12 +156,23 @@
 
                     <!-- Fuel Consumption Rate -->
                     <div>
-                        <label id="consumptionLabel" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Fuel Consumption Rate</label>
+                        <label id="consumptionLabel" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Base Fuel Consumption</label>
                         <div class="relative">
-                            <input type="number" id="fuelConsumption" value="52" min="1" step="0.5" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-16 transition-colors">
+                            <input type="number" id="fuelConsumption" value="45" min="1" step="0.5" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-16 transition-colors">
                             <span id="consumptionUnitDisplay" class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-medium">L/100km</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Road Condition & Traffic Factor -->
+                <div class="pt-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Road Condition & Traffic Factor</label>
+                    <select id="roadCondition" onchange="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                        <option value="1.0">Good Highway / Smooth Interstate (Standard Fuel)</option>
+                        <option value="1.15" selected>Moderate Traffic & Patchy Roads (+15% Fuel Consumption)</option>
+                        <option value="1.30">Heavy Gridlock, Bad Potholes & Rough Terrain (+30% Fuel Consumption)</option>
+                    </select>
+                    <p class="text-[11px] text-slate-500 mt-1">Automatically scales fuel consumption based on Nigerian highway realities</p>
                 </div>
 
                 <!-- Nigerian Specific Fees & Allowances Section -->
@@ -170,14 +182,14 @@
                     </h4>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <!-- Driver & Escort / Crew Allowance -->
+                        <!-- Driver & Crew Allowance -->
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Driver & Crew Allowance</label>
                             <div class="relative">
                                 <span class="absolute left-3.5 top-2.5 text-xs text-emerald-400 font-bold">₦</span>
-                                <input type="number" id="driverAllowance" value="85000" min="0" step="1000" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <input type="number" id="driverAllowance" value="95000" min="0" step="1000" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 transition-colors">
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-1">Food, lodging & trip allowance for driver/motor boy</p>
+                            <p class="text-[11px] text-slate-500 mt-1">Adjusts automatically for heavy loads requiring extended days</p>
                         </div>
 
                         <!-- Tolls, State Levies & Union Fees -->
@@ -185,19 +197,19 @@
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Tolls, Union & State Fees</label>
                             <div class="relative">
                                 <span class="absolute left-3.5 top-2.5 text-xs text-emerald-400 font-bold">₦</span>
-                                <input type="number" id="roadTolls" value="45000" min="0" step="1000" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <input type="number" id="roadTolls" value="50000" min="0" step="1000" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 transition-colors">
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-1">NURTW / RTEAN, LASTMA, interstate levies & tolls</p>
+                            <p class="text-[11px] text-slate-500 mt-1">NURTW / RTEAN, weighbridges, state levies & tolls</p>
                         </div>
 
                         <!-- Maintenance & Wear/Tear Allowance -->
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Maintenance & Wear Allowance</label>
                             <div class="relative">
-                                <input type="number" id="maintenanceMarkup" value="15" min="0" max="100" step="1" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-10 transition-colors">
+                                <input type="number" id="maintenanceMarkup" value="18" min="0" max="100" step="1" oninput="calculateHaulage()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-white focus:outline-none focus:border-emerald-500 pr-10 transition-colors">
                                 <span class="absolute right-3.5 top-2.5 text-xs text-slate-400 font-medium">%</span>
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-1">% of fuel cost reserved for tires, oil & engine wear</p>
+                            <p class="text-[11px] text-slate-500 mt-1">% of fuel cost reserved for tires, oil & heavy weight stress</p>
                         </div>
 
                         <!-- Target Profit Margin -->
@@ -233,7 +245,7 @@
                             ₦0
                         </div>
                         
-                        <p class="text-xs font-semibold text-slate-900/80 mb-5">Total billing price for cargo delivery</p>
+                        <p class="text-xs font-semibold text-slate-900/80 mb-5" id="transitTimeEstimate">Estimated Transit Time: ~2-3 Days</p>
 
                         <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-950/20">
                             <div>
@@ -311,7 +323,7 @@
     <!-- Footer -->
     <footer class="bg-slate-800 border-t border-slate-700/80 mt-12 py-5 text-center text-xs text-slate-500">
         <div class="max-w-7xl mx-auto px-4">
-            <p>Nigerian Haulage & Freight Cost Calculator &copy; 2026 | Tailored for Hauliers, Fleet Operators & Logistics Managers in Nigeria</p>
+            <p>Nigerian Haulage & Freight Cost Calculator &copy; 2026 | Tailored for Hauliers, Manufacturers & Logistics Managers</p>
         </div>
     </footer>
 
@@ -319,12 +331,12 @@
     <script>
         let costChart = null;
 
-        // Realistic Nigerian Truck Presets
+        // General Cargo & Fleet Presets (Weight, Distance, Consumption, Diesel, Driver, Tolls, Maint, Profit)
         const presets = {
-            pickup: { tonnage: 2.5, distance: 300, consumption: 14, diesel: 1400, driver: 25000, tolls: 15000, maint: 12, profit: 25 },
-            canter: { tonnage: 8, distance: 450, consumption: 28, diesel: 1400, driver: 45000, tolls: 25000, maint: 15, profit: 25 },
-            rigid: { tonnage: 18, distance: 550, consumption: 38, diesel: 1400, driver: 65000, tolls: 35000, maint: 15, profit: 25 },
-            trailer: { tonnage: 30, distance: 620, consumption: 52, diesel: 1400, driver: 85000, tolls: 45000, maint: 15, profit: 25 }
+            lightCargo: { tonnage: 10, distance: 1000, consumption: 25, diesel: 1400, driver: 70000, tolls: 35000, maint: 15, profit: 25 },
+            mediumCargo: { tonnage: 25, distance: 1000, consumption: 38, diesel: 1400, driver: 90000, tolls: 45000, maint: 18, profit: 25 },
+            heavyCargo: { tonnage: 45, distance: 1000, consumption: 52, diesel: 1400, driver: 120000, tolls: 65000, maint: 20, profit: 25 },
+            megaCargo: { tonnage: 60, distance: 1000, consumption: 68, diesel: 1400, driver: 150000, tolls: 85000, maint: 22, profit: 25 }
         };
 
         function applyPreset(key) {
@@ -343,7 +355,8 @@
 
         function resetToDefaults() {
             document.getElementById('distanceUnit').value = 'km';
-            applyPreset('trailer');
+            document.getElementById('roadCondition').value = '1.15';
+            applyPreset('mediumCargo');
         }
 
         function formatNaira(amount) {
@@ -355,11 +368,42 @@
             const tonnage = parseFloat(document.getElementById('tonnage').value) || 0;
             const distance = parseFloat(document.getElementById('distance').value) || 0;
             const dieselCost = parseFloat(document.getElementById('dieselCost').value) || 0;
-            const consumption = parseFloat(document.getElementById('fuelConsumption').value) || 0;
+            const baseConsumption = parseFloat(document.getElementById('fuelConsumption').value) || 0;
+            const trafficMultiplier = parseFloat(document.getElementById('roadCondition').value) || 1.0;
             const driverAllowance = parseFloat(document.getElementById('driverAllowance').value) || 0;
             const roadTolls = parseFloat(document.getElementById('roadTolls').value) || 0;
             const maintPct = parseFloat(document.getElementById('maintenanceMarkup').value) || 0;
             const profitPct = parseFloat(document.getElementById('profitMargin').value) || 0;
+
+            // Weight & Tonnage Impact Calculation
+            // Heavier loads increase engine drag and slightly increase fuel consumption
+            let weightImpactLabel = 'Standard Load';
+            let weightFuelMultiplier = 1.0;
+            
+            if (tonnage <= 12) {
+                weightImpactLabel = 'Light Cargo (Faster transit)';
+                weightFuelMultiplier = 0.92;
+            } else if (tonnage <= 30) {
+                weightImpactLabel = 'Standard Cargo Weight';
+                weightFuelMultiplier = 1.0;
+            } else if (tonnage <= 50) {
+                weightImpactLabel = 'Heavy Industrial Load (+ Engine Strain)';
+                weightFuelMultiplier = 1.08;
+            } else {
+                weightImpactLabel = 'Extra Heavy / Oversized Load (Slower transit)';
+                weightFuelMultiplier = 1.18;
+            }
+
+            document.getElementById('weightImpactBadge').innerText = `⚖️ ${weightImpactLabel}`;
+
+            // Estimated Transit Time based on distance and weight heaviness
+            const avgSpeedKmH = tonnage > 45 ? 40 : (tonnage > 20 ? 50 : 60); // Heavier trucks travel slower on Nigerian highways
+            const drivingHours = distance / avgSpeedKmH;
+            const estimatedDays = Math.max(1, Math.ceil(drivingHours / 10)); // Assuming ~10 hours driving per day due to police/weight checkpoints & road conditions
+            document.getElementById('transitTimeEstimate').innerText = `Est. Transit Time: ~${estimatedDays} Day(s) (${Math.round(drivingHours)} driving hours)`;
+
+            // Adjusted Fuel Consumption
+            const adjustedConsumption = baseConsumption * trafficMultiplier * weightFuelMultiplier;
 
             // Labels update
             document.getElementById('distanceUnitDisplay').innerText = unit;
@@ -368,16 +412,16 @@
             // Calculate Liters required
             let totalLiters = 0;
             if (unit === 'km') {
-                totalLiters = (distance / 100) * consumption;
+                totalLiters = (distance / 100) * adjustedConsumption;
             } else {
-                // Miles: assume consumption input is MPG
-                totalLiters = consumption > 0 ? (distance / consumption) * 3.78541 : 0;
+                totalLiters = adjustedConsumption > 0 ? (distance / adjustedConsumption) * 3.78541 : 0;
             }
 
             const totalDieselCost = totalLiters * dieselCost;
             
-            // Maintenance Allowance = % of Diesel cost
-            const maintAllowance = totalDieselCost * (maintPct / 100);
+            // Maintenance Allowance = % of Diesel cost (higher tonnage increases wear and tear)
+            const adjustedMaintPct = maintPct + (tonnage > 40 ? 5 : (tonnage > 20 ? 2 : 0));
+            const maintAllowance = totalDieselCost * (adjustedMaintPct / 100);
 
             // Total Operational Expenses
             const totalOperatingExpense = totalDieselCost + driverAllowance + roadTolls + maintAllowance;
